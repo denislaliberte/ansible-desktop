@@ -1,0 +1,13 @@
+---
+- hosts: local
+  user: dlaliber@garda.ca
+  sudo: yes
+  tasks:
+    - name: Install list of packages
+      apt: name={{item}} state=installed
+      with_items:
+           - tmux
+           - tree
+
+#  roles:
+#    - cmprescott.chrome

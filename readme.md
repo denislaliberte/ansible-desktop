@@ -24,3 +24,4 @@
 - install shell script accessible by curl
 - check the name of site.yml
 - confir if we need to use sudo
+- fix chrome
