@@ -6,6 +6,5 @@
     - name: Install tmux
       apt: name=tmux state=present
       
-
-#  roles:
-#    - chrome
+  roles:
+    - cmprescott.chrome
