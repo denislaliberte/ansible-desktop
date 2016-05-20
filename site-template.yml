@@ -1,0 +1,11 @@
+---
+- hosts: local
+  user: denislaliberte
+  sudo: yes
+  tasks:
+    - name: Install tmux
+      apt: name=tmux state=present
+      
+
+#  roles:
+#    - chrome
