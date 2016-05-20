@@ -21,6 +21,9 @@
 
 ## Roadmap
 
+- virtualenvwrapper
+- virtualenv workspace
+- refactor pip task to requirements.txt file
 - install shell script accessible by curl
 - check the name of site.yml
 - confir if we need to use sudo

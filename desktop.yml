@@ -3,11 +3,16 @@
   user: dlaliber@garda.ca
   sudo: yes
   tasks:
-    - name: Install list of packages
+    - name: Install list of apt packages
       apt: name={{item}} state=installed
       with_items:
            - tmux
            - tree
+    - name: Install list of pip packages
+      pip: name={{item}}
+      with_items:
+           - virtualenvwrapper
+
 
 #  roles:
 #    - cmprescott.chrome
