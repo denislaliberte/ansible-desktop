@@ -1,1 +1,3 @@
-cmprescott.chrome, 0.2.1
+- gcporras.virtualenvwrapper, v1.0.1
+- hadenlabs.virtualenvwrapper, 0.0.3
+- cmprescott.chrome, 0.2.1
