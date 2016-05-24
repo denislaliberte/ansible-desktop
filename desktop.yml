@@ -1,18 +1,22 @@
 ---
 - hosts: local
-  user: dlaliber@garda.ca
+  user: GARDA\dlaliber
   sudo: yes
   tasks:
     - name: Install list of apt packages
-      apt: name={{item}} state=installed
+      apt: name="{{item}}" state=installed
       with_items:
            - tmux
            - tree
+           - libpq-dev
     - name: Install list of pip packages
-      pip: name={{item}}
+      pip: name="{{item}}"
       with_items:
            - virtualenvwrapper
 
+  roles:
+     - { role: ANXS.postgresql  }
+#     - { role: hadenlabs.virtualenvwrapper }
 
 #  roles:
 #    - cmprescott.chrome
