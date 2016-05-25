@@ -21,10 +21,11 @@
 
 ## Roadmap
 
-- virtualenvwrapper
-- virtualenv workspace
+- rvm, fix gpg key
+- virtualenvwrapper test role, debug and chose
+- fix postgresql role
 - refactor pip task to requirements.txt file
 - install shell script accessible by curl
-- check the name of site.yml
-- confir if we need to use sudo
+
+- config if we need to use sudo
 - fix chrome
