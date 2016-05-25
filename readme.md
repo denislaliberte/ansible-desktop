@@ -29,7 +29,7 @@
 
 * rvm, fix gpg key
 * virtualenvwrapper test role, debug and chose
-* fix postgresql role
+* fix postgresql role or create a role to configure postgres password and adminpack
 * refactor pip task to requirements.txt file
 * install shell script accessible by curl
 * fix chrome

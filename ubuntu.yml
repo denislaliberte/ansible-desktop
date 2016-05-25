@@ -13,6 +13,9 @@
            - tree
            # db 
            - sqlite3 
+           - postgresql
+           - postgresql-contrib
+           - pgadmin3
            # misc
            - libpq-dev
            # ansible-lint
