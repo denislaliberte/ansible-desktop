@@ -3,7 +3,9 @@
 
 ## Usage
 
-    ~/ansible-desktop/ubuntu.yml
+    source ~/ansible-desktop/.env
+    avu # ansible vim ubuntu playbook
+    apu # ansible execute playbook ubuntu
     
 
 
@@ -19,7 +21,7 @@
 
 ## Roadmap
 
-* homyzsh
+* homyzsh, fix role, the shell is not changed
 * homesick
 * vagrant
 * virutal box

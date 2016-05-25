@@ -11,7 +11,13 @@
            - tmux
            - tree
            - libpq-dev
+           # ansible-lint
            - libffi-dev
+           # python-ldap
+           - libldap2-dev
+           - libsasl2-dev
+           - libssl-dev
+           
     - name: Install list of pip packages
       pip: name="{{item}}"
       with_items:
@@ -19,7 +25,7 @@
            - ansible-lint
 
   roles:
-     - { role: mashimom.oh-my-zsh, ohmyzsh_theme: 'lambda' }
+     - { role: mashimom.oh-my-zsh, ohmyzsh_theme: 'lambda', ohmyzsh_user: 'GARDA\\dlaliber' }
 
 #    - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True }
 #    - { role: ANXS.postgresql  }
