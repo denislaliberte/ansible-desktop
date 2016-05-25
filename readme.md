@@ -22,12 +22,11 @@
 ## Roadmap
 
 * homyzsh, fix role, the shell is not changed
+* vagrant, fix role, die at the apt-get vagrant
 * homesick
-* vagrant
 * virutal box
 * docker
 
-* remote django role
 * rvm, fix gpg key
 * virtualenvwrapper test role, debug and chose
 * fix postgresql role
