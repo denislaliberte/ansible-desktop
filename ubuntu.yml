@@ -2,7 +2,7 @@
 ---
 - hosts: local
   become: true
-  become_user: GARDA\dlaliber
+  become_user: root
   become_method: sudo
   tasks:
     - name: Install list of apt packages
@@ -11,15 +11,19 @@
            - tmux
            - tree
            - libpq-dev
+           - libffi-dev
     - name: Install list of pip packages
       pip: name="{{item}}"
       with_items:
            - virtualenvwrapper
+           - ansible-lint
 
-#  roles:
+  roles:
+     - { role: mashimom.oh-my-zsh, ohmyzsh_theme: 'lambda' }
+
 #    - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True }
-#     - { role: ANXS.postgresql  }
-#     - { role: hadenlabs.virtualenvwrapper }
+#    - { role: ANXS.postgresql  }
+#    - { role: hadenlabs.virtualenvwrapper }
 
 #  roles:
 #    - cmprescott.chrome
