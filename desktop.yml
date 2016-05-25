@@ -1,7 +1,9 @@
+#!/usr/bin/env ansible-playbook
 ---
 - hosts: local
-  user: GARDA\dlaliber
-  sudo: yes
+  become: true
+  become_user: GARDA\dlaliber
+  become_method: sudo
   tasks:
     - name: Install list of apt packages
       apt: name="{{item}}" state=installed
@@ -14,8 +16,9 @@
       with_items:
            - virtualenvwrapper
 
-  roles:
-     - { role: ANXS.postgresql  }
+#  roles:
+#    - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True }
+#     - { role: ANXS.postgresql  }
 #     - { role: hadenlabs.virtualenvwrapper }
 
 #  roles:
