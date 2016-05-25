@@ -3,10 +3,8 @@
 
 ## Usage
 
-    cd ~/.config-desktop
-    cp site-template.yml site.yml
-    vim site.yml
-    ansible-playbook -i hosts site.yml -K
+    ~/ansible-desktop/ubuntu.yml
+    
 
 
 ## Installation
@@ -16,7 +14,7 @@
     sudo apt-get install ansible
     sudo easy_install pip
     sudo pip install paramiko PyYAML jinja2
-    git clone https://github.com/denislaliberte/config-desktop-ubuntu.git $HOME/.config-desktop
+    git clone https://github.com/denislaliberte/config-desktop-ubuntu.git $HOME/ansible-desktop
 
 
 ## Roadmap
