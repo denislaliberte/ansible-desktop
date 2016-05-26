@@ -33,20 +33,26 @@
            - virtualenvwrapper
            - ansible-lint
 
+    - name: Add virtualenv workon home to zshrc
+      lineinfile: dest=/home/dlaliberte/.zshrc line="export WORKON_ROME=~/Envs"
+
+    - name: Add virtualenvwrapper to zsh
+      lineinfile: dest=/home/dlaliberte/.zshrc line="source /usr/local/bin/virtualenvwrapper.sh"
+
     - name: Install homeshick to manage dotfiles
-      git: repo=https://github.com/andsens/homeshick.git dest=/home/dlaliber/.homesick/repos/homeshick
+      git: repo=https://github.com/andsens/homeshick.git dest=/home/dlaliberte/.homesick/repos/homeshick update=no
       #todo get home from variables
 
     - name: Add Homeshick to bashrc
-      lineinfile: dest=/home/dlaliber/.bashrc line="\nsource '/home/dlaliber/.homesick/repos/homeshick/homeshick.sh'"
+      lineinfile: dest=/home/dlaliberte/.zshrc line="source /home/dlaliberte/.homesick/repos/homeshick/homeshick.sh"
 
     - name: Download dotfiles
-      git: repo=https://github.com/denislaliberte/dotfiles.git dest=/home/dlaliber/.homesick/repos/dotfiles
+      git: repo=https://github.com/denislaliberte/dotfiles.git dest=/home/dlaliberte/.homesick/repos/dotfiles update=no
 
 
 #  roles:
+#    - { role: mashimom.oh-my-zsh, ohmyzsh_theme: 'lambda', ohmyzsh_user: 'dlaliberte' }
 #    - { role: FGtatsuro.vagrant }
-#    - { role: mashimom.oh-my-zsh, ohmyzsh_theme: 'lambda', ohmyzsh_user: 'GARDA\\dlaliber' }
 #    - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True }
 #    - { role: ANXS.postgresql  }
 #    - { role: hadenlabs.virtualenvwrapper }
