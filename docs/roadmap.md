@@ -6,10 +6,11 @@
 
 ## todo 
 
+* homesick or homeshick
 * homyzsh, fix role, the shell is not changed
 * vagrant, fix role, die at the apt-get vagrant
-* homesick
 * virutal box
+* ruby fix gem permission with user
 
 ## later
 
