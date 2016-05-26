@@ -19,6 +19,7 @@
 * refactor pip task to requirements.txt file
 * install shell script accessible by curl
 * fix chrome
+* refactor single file as role
 * [Ansible Galaxy | geerlingguy.nginx](https://galaxy.ansible.com/geerlingguy/nginx/)
 * [Ansible Galaxy | geerlingguy.git](https://galaxy.ansible.com/geerlingguy/git/)
 * [Ansible Galaxy | geerlingguy.apache](https://galaxy.ansible.com/geerlingguy/apache/)
