@@ -6,10 +6,11 @@
 
 ## todo 
 
+* homesick or homeshick
 * homyzsh, fix role, the shell is not changed
 * vagrant, fix role, die at the apt-get vagrant
-* homesick
 * virutal box
+* ruby fix gem permission with user
 
 ## later
 
@@ -19,6 +20,7 @@
 * refactor pip task to requirements.txt file
 * install shell script accessible by curl
 * fix chrome
+* refactor single file as role
 * [Ansible Galaxy | geerlingguy.nginx](https://galaxy.ansible.com/geerlingguy/nginx/)
 * [Ansible Galaxy | geerlingguy.git](https://galaxy.ansible.com/geerlingguy/git/)
 * [Ansible Galaxy | geerlingguy.apache](https://galaxy.ansible.com/geerlingguy/apache/)

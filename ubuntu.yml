@@ -11,6 +11,8 @@
            # utils
            - tmux
            - tree
+           # language
+           - ruby-full
            # db 
            - sqlite3 
            - postgresql
@@ -24,19 +26,28 @@
            - libldap2-dev
            - libsasl2-dev
            - libssl-dev
-           
-    - name: Install list of pip packages
+
+    - name: Install Python Tools (pip)
       pip: name="{{item}}"
       with_items:
            - virtualenvwrapper
            - ansible-lint
 
+    - name: Install homeshick to manage dotfiles
+      git: repo=https://github.com/andsens/homeshick.git dest=/home/dlaliber/.homesick/repos/homeshick
+      #todo get home from variables
+
+    - name: Add Homeshick to bashrc
+      lineinfile: dest=/home/dlaliber/.bashrc line="\nsource '/home/dlaliber/.homesick/repos/homeshick/homeshick.sh'"
+
+    - name: Download dotfiles
+      git: repo=https://github.com/denislaliberte/dotfiles.git dest=/home/dlaliber/.homesick/repos/dotfiles
+
+
 #  roles:
-#     - { role: FGtatsuro.vagrant }
+#    - { role: FGtatsuro.vagrant }
 #    - { role: mashimom.oh-my-zsh, ohmyzsh_theme: 'lambda', ohmyzsh_user: 'GARDA\\dlaliber' }
 #    - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True }
 #    - { role: ANXS.postgresql  }
 #    - { role: hadenlabs.virtualenvwrapper }
-
-#  roles:
 #    - cmprescott.chrome
