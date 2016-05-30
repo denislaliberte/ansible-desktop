@@ -6,20 +6,27 @@
 
 ## todo 
 
-* homesick or homeshick
-* homyzsh, fix role, the shell is not changed
 * vagrant, fix role, die at the apt-get vagrant
 * virutal box
 * ruby fix gem permission with user
+* pandoc
+* node
 
 ## later
 
 * rvm, fix gpg key
 * virtualenvwrapper test role, debug and chose
+* gitgot (cpan)
+* atom
 * fix postgresql role or create a role to configure postgres password and adminpack
+* lastpass
+* diff tool
+* keyboard mapper
 * refactor pip task to requirements.txt file
 * install shell script accessible by curl
 * fix chrome
+* go
+* gem homesick
 * refactor single file as role
 * [Ansible Galaxy | geerlingguy.nginx](https://galaxy.ansible.com/geerlingguy/nginx/)
 * [Ansible Galaxy | geerlingguy.git](https://galaxy.ansible.com/geerlingguy/git/)
