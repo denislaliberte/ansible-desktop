@@ -19,6 +19,7 @@
            - postgresql-contrib
            - pgadmin3
            - mariadb-server-5.5
+           - libmysqlclient-dev
            # misc
            - libpq-dev
            # ansible-lint
