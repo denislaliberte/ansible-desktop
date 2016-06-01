@@ -11,6 +11,7 @@
 * ruby fix gem permission with user
 * pandoc
 * node
+* atom sudo add-apt-repository ppa:webupd8team/atom
 
 ## later
 
