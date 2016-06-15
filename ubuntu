@@ -15,6 +15,9 @@
            - ruby-full
            # utils
            - pass
+           - dtrx
+           - pandoc
+           - texlive-full
            # db 
            - sqlite3 
            - postgresql
@@ -25,12 +28,22 @@
            # misc
            - libpq-dev
            - focuswriter
+           - kdiff3
            # ansible-lint
            - libffi-dev
            # python-ldap
            - libldap2-dev
            - libsasl2-dev
            - libssl-dev
+           # js
+           - nodejs
+           - npm
+           # perl
+           - cpanminus
+
+
+    - name: symlink node js
+      file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
 
     - name: Install Python Tools (pip)
       pip: name="{{item}}"
@@ -54,11 +67,21 @@
     - name: Download dotfiles
       git: repo=https://github.com/denislaliberte/dotfiles.git dest=/home/dlaliberte/.homesick/repos/dotfiles update=no
 
+    - name: Install js tools
+      npm: name="{{item}}" global=yes
+      with_items:
+           - jslint
+           - eslint
+           - requirejs
+
+    #- name: Install perl tools
+    #  cpanm: name=App::GitGot
+
 
 #  roles:
+#    - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True, rvm1_gpg_key_server: 'hkp://keys.gnupg.net:80' }
 #    - { role: mashimom.oh-my-zsh, ohmyzsh_theme: 'lambda', ohmyzsh_user: 'dlaliberte' }
 #    - { role: FGtatsuro.vagrant }
-#    - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True }
 #    - { role: ANXS.postgresql  }
 #    - { role: hadenlabs.virtualenvwrapper }
 #    - cmprescott.chrome
