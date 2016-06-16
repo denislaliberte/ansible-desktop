@@ -42,6 +42,10 @@
            - npm
            # perl
            - cpanminus
+           # Auth
+           - slapd
+           - ldap-utils
+           - phpldapadmin
 
 
     - name: symlink node js
