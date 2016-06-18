@@ -5,12 +5,15 @@
   become_user: "{{user}}"
   become_method: sudo
   tasks:
+    - name: Add apt repository
+      apt_repository: repo='ppa:maarten-baert/simplescreenrecorder' state=present
     - name: Install list of apt packages
       apt: name="{{item}}" state=installed
       with_items:
            # utils
            - tmux
            - tree
+           - simplescreenrecorder
            # language
            - ruby-full
            # utils
@@ -78,13 +81,17 @@
       with_items:
            - jslint
            - eslint
+           - eslint-plugin-requirejs
            - requirejs
+           - gulp-cli
+
 
     #- name: Install perl tools
     #  cpanm: name=App::GitGot
 
 
-#  roles:
+  roles:
+    - { role: thydel.vagrant, vagrant_baseurl: "https://releases.hashicorp.com/vagrant/1.8.4", vagrant_debfile: "vagrant_1.8.4_x86_64.deb"}
 #    - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True, rvm1_gpg_key_server: 'hkp://keys.gnupg.net:80' }
 #    - { role: mashimom.oh-my-zsh, ohmyzsh_theme: 'lambda', ohmyzsh_user: 'dlaliberte' }
 #    - { role: ANXS.postgresql  }
