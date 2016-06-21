@@ -6,7 +6,10 @@
   become_method: sudo
   tasks:
     - name: Add apt repository
-      apt_repository: repo='ppa:maarten-baert/simplescreenrecorder' state=present
+      apt_repository: repo="{{item}}" state=present
+      with_items:
+          - ppa:maarten-baert/simplescreenrecorder
+          - ppa:team-xbmc/ppa
     - name: Install list of apt packages
       apt: name="{{item}}" state=installed
       with_items:
@@ -14,6 +17,7 @@
            - tmux
            - tree
            - simplescreenrecorder
+           - kodi
            # language
            - ruby-full
            # utils
