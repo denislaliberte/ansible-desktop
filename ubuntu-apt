@@ -41,13 +41,10 @@
            - kdiff3
            # ansible-lint
            - libffi-dev
-           # python-ldap
+           # ldap
            - libldap2-dev
            - libsasl2-dev
            - libssl-dev
-           # js
-           - nodejs
-           - npm
            # perl
            - cpanminus
            # Auth

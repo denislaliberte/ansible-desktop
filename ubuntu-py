@@ -1,0 +1,18 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: local
+  become: true
+  become_user: "{{user}}"
+  become_method: sudo
+  tasks:
+    - name: Install Python Tools (pip)
+      pip: name="{{item}}"
+      with_items:
+           - virtualenvwrapper
+           - ansible-lint
+
+    - name: Add virtualenv workon home to zshrc
+      lineinfile: dest=/home/dlaliberte/.zshrc line="export WORKON_ROME=~/Envs"
+
+    - name: Add virtualenvwrapper to zsh
+      lineinfile: dest=/home/dlaliberte/.zshrc line="source /usr/local/bin/virtualenvwrapper.sh"

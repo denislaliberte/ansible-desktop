@@ -6,21 +6,6 @@
   become_method: sudo
   tasks:
 
-    - name: symlink node js
-      file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
-
-    - name: Install Python Tools (pip)
-      pip: name="{{item}}"
-      with_items:
-           - virtualenvwrapper
-           - ansible-lint
-
-    - name: Add virtualenv workon home to zshrc
-      lineinfile: dest=/home/dlaliberte/.zshrc line="export WORKON_ROME=~/Envs"
-
-    - name: Add virtualenvwrapper to zsh
-      lineinfile: dest=/home/dlaliberte/.zshrc line="source /usr/local/bin/virtualenvwrapper.sh"
-
     - name: Install homeshick to manage dotfiles
       git: repo=https://github.com/andsens/homeshick.git dest=/home/dlaliberte/.homesick/repos/homeshick update=no
       #todo get home from variables
@@ -31,15 +16,6 @@
     - name: Download dotfiles
       git: repo=https://github.com/denislaliberte/dotfiles.git dest=/home/dlaliberte/.homesick/repos/dotfiles update=no
 
-    - name: Install js tools
-      npm: name="{{item}}" global=yes
-      with_items:
-           - jslint
-           - eslint
-           - eslint-plugin-requirejs
-           - requirejs
-           - gulp-cli
-           - wat
 
     #- name: Install perl tools
     #  cpanm: name=App::GitGot
