@@ -51,3 +51,13 @@
            - slapd
            - ldap-utils
            - phpldapadmin
+
+    #- name: Install perl tools
+    #  cpanm: name=App::GitGot
+
+
+#    - { role: rvm_io.rvm1-ruby, tags: ruby, sudo: True, rvm1_gpg_key_server: 'hkp://keys.gnupg.net:80' }
+#    - { role: mashimom.oh-my-zsh, ohmyzsh_theme: 'lambda', ohmyzsh_user: 'dlaliberte' }
+#    - { role: ANXS.postgresql  }
+#    - { role: hadenlabs.virtualenvwrapper }
+#    - cmprescott.chrome
