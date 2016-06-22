@@ -1,0 +1,18 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: local
+  become: true
+  become_user: "{{user}}"
+  become_method: sudo
+  tasks:
+    - name: Install list of apt packages
+      apt: name="{{item}}" state=installed
+      with_items:
+           # servers
+           - apache2
+    - name: enamble mod_rewite
+      apache2_module: name="{{item}}" state=present
+      with_items:
+           - rewrite
+           - proxy
+

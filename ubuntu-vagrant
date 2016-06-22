@@ -1,0 +1,8 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: local
+  become: true
+  become_user: "{{user}}"
+  become_method: sudo
+  roles:
+    - { role: thydel.vagrant, vagrant_baseurl: "https://releases.hashicorp.com/vagrant/1.8.4", vagrant_debfile: "vagrant_1.8.4_x86_64.deb"}

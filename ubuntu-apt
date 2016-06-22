@@ -1,0 +1,56 @@
+#!/usr/bin/env ansible-playbook
+---
+- hosts: local
+  become: true
+  become_user: "{{user}}"
+  become_method: sudo
+  tasks:
+    - name: Add apt repository
+      apt_repository: repo="{{item}}" state=present
+      with_items:
+          - ppa:maarten-baert/simplescreenrecorder
+          - ppa:team-xbmc/ppa
+    - name: Install list of apt packages
+      apt: name="{{item}}" state=installed
+      with_items:
+           # utils
+           - tmux
+           - tree
+           - simplescreenrecorder
+           - kodi
+           - clipit
+           # language
+           - ruby-full
+           # utils
+           - pass
+           - dtrx
+           - pandoc
+           - texlive-full
+           # op
+           - virtualbox
+           # db 
+           - sqlite3 
+           - postgresql
+           - postgresql-contrib
+           - pgadmin3
+           - mariadb-server-5.5
+           - libmysqlclient-dev
+           # misc
+           - libpq-dev
+           - focuswriter
+           - kdiff3
+           # ansible-lint
+           - libffi-dev
+           # python-ldap
+           - libldap2-dev
+           - libsasl2-dev
+           - libssl-dev
+           # js
+           - nodejs
+           - npm
+           # perl
+           - cpanminus
+           # Auth
+           - slapd
+           - ldap-utils
+           - phpldapadmin
