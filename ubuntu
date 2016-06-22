@@ -34,6 +34,8 @@
            - pgadmin3
            - mariadb-server-5.5
            - libmysqlclient-dev
+           # servers
+           - apache2
            # misc
            - libpq-dev
            - focuswriter
@@ -54,6 +56,11 @@
            - ldap-utils
            - phpldapadmin
 
+    - name: enamble mod_rewite
+      apache2_module: name="{{item}}" state=present
+      with_items:
+           - rewrite
+           - proxy
 
     - name: symlink node js
       file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
@@ -89,7 +96,6 @@
            - requirejs
            - gulp-cli
            - wat
-
 
     #- name: Install perl tools
     #  cpanm: name=App::GitGot
